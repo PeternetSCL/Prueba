@@ -3,55 +3,158 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>React SPA UMD</title>
+  <title>Agencia Digital | Estrategias Web y Marketing Online</title>
 
-  <script src="https://cdn.tailwindcss.com"></script>
+  <meta name="description"
+        content="Agencia digital especializada en desarrollo web, SEO y publicidad online. Diseñamos estrategias digitales a medida para atraer más clientes a tu negocio." />
+  <link rel="canonical" href="https://TU-DOMINIO.com/" />
 
-  <!-- React UMD -->
-  <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
-  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Agencia Digital | Estrategias Web y Marketing Online" />
+  <meta property="og:description"
+        content="Estrategias digitales que funcionan: diseño web, SEO y campañas pagadas para hacer crecer tu negocio." />
+  <meta property="og:url" content="https://TU-DOMINIO.com/" />
+  <meta property="og:image" content="https://TU-DOMINIO.com/assets/img/hero-agencia.jpg" />
 
-  <!-- React Router DOM UMD que sí expone ReactRouterDOM -->
-  <script src="https://unpkg.com/react-router-dom@6.4.3/umd/react-router-dom.development.js"></script>
-</head>
-
-<body class="bg-gray-50">
-  <div id="root"></div>
-
-  <script>
-    const { createRoot } = ReactDOM;
-    const { BrowserRouter, Routes, Route, Link } = ReactRouterDOM;
-
-    const h = React.createElement;
-
-    const Nav = () =>
-      h("nav", { className: "p-4 bg-white shadow-md" },
-        h(Link, { to: "/", className: "mr-4" }, "Home"),
-        h(Link, { to: "/servicios" }, "Servicios")
-      );
-
-    const Home = () =>
-      h("div", null,
-        h(Nav),
-        h("h1", { className: "p-4 text-3xl" }, "Home")
-      );
-
-    const Servicios = () =>
-      h("div", null,
-        h(Nav),
-        h("h1", { className: "p-4 text-3xl" }, "Servicios")
-      );
-
-    const App = () =>
-      h(BrowserRouter, null,
-        h(Routes, null,
-          h(Route, { path: "/", element: h(Home) }),
-          h(Route, { path: "/servicios", element: h(Servicios) }),
-          h(Route, { path: "*", element: h("h1", null, "404") })
-        )
-      );
-
-    createRoot(document.getElementById("root")).render(h(App));
+  <!-- Organization JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Agencia Digital",
+    "url": "https://TU-DOMINIO.com/",
+    "logo": "https://TU-DOMINIO.com/assets/img/hero-agencia.jpg",
+    "sameAs": [
+      "https://www.facebook.com/",
+      "https://www.instagram.com/",
+      "https://www.linkedin.com/"
+    ]
+  }
   </script>
+
+  <link rel="stylesheet" href="/assets/css/styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <span class="brand-icon">🌐</span>
+        <span class="brand-name">Agencia Digital</span>
+      </div>
+      <nav class="main-nav" aria-label="Navegación principal">
+        <a href="/" class="nav-link nav-link-active">Home</a>
+        <a href="/servicios/" class="nav-link">Servicios</a>
+        <a href="/nosotros/" class="nav-link">Nosotros</a>
+        <a href="/contacto/" class="nav-link">Contacto</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-text">
+          <p class="hero-kicker">Agencia Digital</p>
+          <h1 class="hero-title">
+            Impulsa tu negocio<br />
+            en el <span class="hero-highlight">mundo digital</span>
+          </h1>
+          <p class="hero-subtitle">
+            Desarrollamos estrategias digitales a medida, diseñamos webs impactantes
+            y optimizamos tu presencia online para atraer más clientes.
+          </p>
+          <div class="hero-actions">
+            <a href="/servicios/" class="btn btn-primary">Ver Servicios</a>
+            <a href="/contacto/" class="btn btn-secondary">Contáctanos</a>
+          </div>
+        </div>
+        <div class="hero-image-wrapper">
+          <img src="/assets/img/hero-agencia.jpg"
+               alt="Vista de costa y mar representando el mundo digital en movimiento"
+               class="hero-image" />
+        </div>
+      </div>
+    </section>
+
+    <!-- POR QUÉ ELEGIRNOS -->
+    <section class="section">
+      <div class="container">
+        <p class="section-kicker">Por qué elegirnos</p>
+        <h2 class="section-title">Soluciones digitales que funcionan</h2>
+        <p class="section-subtitle">
+          Nos enfocamos en resultados reales. Desde el primer boceto hasta el lanzamiento final,
+          te acompañamos con una estrategia clara y medible.
+        </p>
+
+        <div class="cards-grid">
+          <article class="card">
+            <h3 class="card-title">✅ Experiencia</h3>
+            <p class="card-text">
+              Más de 10 años ayudando a empresas a crecer en internet con estrategias sólidas y medibles.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3 class="card-title">✅ Tecnología</h3>
+            <p class="card-text">
+              Utilizamos herramientas modernas para que tu web sea rápida, segura y fácil de mantener.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3 class="card-title">✅ Soporte</h3>
+            <p class="card-text">
+              Acompañamiento continuo para que tu proyecto evolucione contigo y tu negocio.
+            </p>
+          </article>
+        </div>
+
+        <div class="section-cta-center">
+          <a href="/nosotros/" class="link-arrow">Conoce más sobre nosotros →</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <div class="brand footer-brand">
+          <span class="brand-icon">🌐</span>
+          <span class="brand-name">Agencia Digital</span>
+        </div>
+        <p class="footer-text">
+          Impulsamos tu negocio con estrategias digitales efectivas y desarrollo web de vanguardia.
+        </p>
+      </div>
+
+      <div>
+        <h3 class="footer-title">Enlaces rápidos</h3>
+        <ul class="footer-list">
+          <li><a href="/">Home</a></li>
+          <li><a href="/servicios/">Servicios</a></li>
+          <li><a href="/nosotros/">Nosotros</a></li>
+          <li><a href="/contacto/">Contacto</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="footer-title">Contacto</h3>
+        <p class="footer-text">
+          contacto@agenciadigital.com<br />
+          +34 912 345 678<br />
+          Madrid, España
+        </p>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container footer-bottom-inner">
+        <p>© 2025 Agencia Digital. Todos los derechos reservados.</p>
+      </div>
+    </div>
+  </footer>
 </body>
 </html>
