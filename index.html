@@ -1,160 +1,453 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Agencia Digital | Estrategias Web y Marketing Online</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LocalBoost | Especialistas en SEO Local para PYMES</title>
+    
+    <!-- Enlace al CDN de Tailwind CSS --><script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Configuración de fuente Inter para un look similar al de la imagen --><link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8faff; /* Un fondo más blanco azulado como en la imagen */
+            color: #1a202c;
+        }
+        /* Gradiente para el fondo sutil en el hero, replicando el de la imagen */
+        .hero-background-gradient {
+            background: radial-gradient(at 50% 10%, #dbeafe 0%, transparent 70%);
+        }
+        /* Estilo específico para el botón de auditoría con icono */
+        .btn-auditoria-ia {
+            background-color: #2563eb; /* Azul fuerte como en la imagen */
+            color: white;
+            padding: 0.9rem 1.7rem; /* Ajustado para coincidir */
+            border-radius: 0.75rem; /* Menos redondeado, como en la imagen */
+            font-weight: 600; /* Semibold */
+            font-size: 1rem; /* Base font size */
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem; /* Espaciado entre texto e icono */
+            transition: all 0.2s ease-in-out;
+            box-shadow: 0 4px 14px rgba(37, 99, 235, 0.3); /* Sombra azulada como en la imagen */
+        }
+        .btn-auditoria-ia:hover {
+            background-color: #1e40af; /* Azul más oscuro al hover */
+            transform: translateY(-1px); /* Pequeño efecto de elevación */
+            box-shadow: 0 6px 16px rgba(37, 99, 235, 0.4);
+        }
+        /* Estilo para el botón de agendar consulta */
+        .btn-agendar-consulta {
+            background-color: #ffffff; /* Blanco puro */
+            color: #4a5568; /* Gris oscuro para el texto */
+            padding: 0.9rem 1.7rem; /* Ajustado para coincidir */
+            border-radius: 0.75rem; /* Menos redondeado, como en la imagen */
+            font-weight: 600; /* Semibold */
+            font-size: 1rem; /* Base font size */
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem; /* Espaciado entre texto e icono */
+            transition: all 0.2s ease-in-out;
+            border: 1px solid #e2e8f0; /* Borde gris muy sutil */
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); /* Sombra sutil */
+        }
+        .btn-agendar-consulta:hover {
+            background-color: #f7fafc; /* Fondo muy claro al hover */
+            border-color: #cbd5e0; /* Borde ligeramente más oscuro */
+            transform: translateY(-1px); /* Pequeño efecto de elevación */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        /* Estilo para la etiqueta "Especialistas en SEO Local para PYMES" */
+        .badge-seo-pymes {
+            background-color: #eff6ff; /* Fondo azul muy claro */
+            color: #2563eb; /* Texto azul */
+            padding: 0.35rem 0.85rem;
+            border-radius: 9999px;
+            font-size: 0.875rem; /* text-sm */
+            font-weight: 500; /* medium */
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            border: 1px solid #dbeafe; /* Borde azul muy claro */
+        }
+        .badge-seo-pymes svg {
+            color: #2563eb;
+        }
 
-  <meta name="description"
-        content="Agencia digital especializada en desarrollo web, SEO y publicidad online. Diseñamos estrategias digitales a medida para atraer más clientes a tu negocio." />
-  <link rel="canonical" href="https://TU-DOMINIO.com/" />
+        /* Estilo de la tarjeta de servicio y el HOVER que replica el fondo azul claro */
+        .service-card {
+            background-color: #ffffff; /* Fondo blanco inicial */
+            border-radius: 1.5rem; /* Esquinas muy redondeadas */
+            padding: 2.5rem; /* Padding generoso */
+            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06); /* Sombra sutil */
+            transition: all 0.3s ease;
+        }
+        .service-card:hover {
+            background-color: #f0f7ff; /* Fondo azul claro en hover, como en la imagen */
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* Sombra ligera en hover */
+        }
 
-  <!-- Open Graph -->
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="Agencia Digital | Estrategias Web y Marketing Online" />
-  <meta property="og:description"
-        content="Estrategias digitales que funcionan: diseño web, SEO y campañas pagadas para hacer crecer tu negocio." />
-  <meta property="og:url" content="https://TU-DOMINIO.com/" />
-  <meta property="og:image" content="https://TU-DOMINIO.com/assets/img/hero-agencia.jpg" />
+        /* Estilo del icono dentro de la caja */
+        .service-icon-box {
+            background-color: #2563eb; /* Azul fuerte para el fondo del icono */
+            color: white;
+            width: 3rem;
+            height: 3rem;
+            border-radius: 0.75rem; /* Mismo redondeo que en la imagen */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1rem;
+        }
+    </style>
 
-  <!-- Organization JSON-LD -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "Agencia Digital",
-    "url": "https://TU-DOMINIO.com/",
-    "logo": "https://TU-DOMINIO.com/assets/img/hero-agencia.jpg",
-    "sameAs": [
-      "https://www.facebook.com/",
-      "https://www.instagram.com/",
-      "https://www.linkedin.com/"
-    ]
-  }
-  </script>
+    <!-- Schema Markup 1: LocalBusiness (JSON-LD) para Google --><script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "LocalBusiness",
+          "name": "LocalBoost - Consultoría SEO Local Santiago",
+          "image": "https://placehold.co/1200x630/2563eb/ffffff?text=LocalBoost",
+          "url": "URL_DE_LA_CONSULTORA",
+          "telephone": "+56-228765432",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Santiago",
+            "addressRegion": "Región Metropolitana",
+            "addressCountry": "CL"
+          },
+          "areaServed": "Santiago y Región Metropolitana",
+          "priceRange": "$$"
+        }
+    </script>
 
-  <link rel="stylesheet" href="/assets/css/styles.css" />
+    <!-- Schema Markup 2: Service (JSON-LD) para el servicio principal --><script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "Service",
+          "serviceType": "Optimización SEO Local y Google Maps",
+          "name": "Servicio de Posicionamiento en Google Maps: Auditoría y Optimización de GMB",
+          "description": "Consultoría especializada para negocios en Santiago que buscan dominar los resultados del Map Pack y aumentar su visibilidad local en Google.",
+          "provider": {
+            "@type": "LocalBusiness",
+            "name": "LocalBoost - Consultoría SEO Local Santiago"
+          }
+        }
+    </script>
 </head>
-<body>
-  <header class="site-header">
-    <div class="container header-inner">
-      <div class="brand">
-        <span class="brand-icon">🌐</span>
-        <span class="brand-name">Agencia Digital</span>
-      </div>
-      <nav class="main-nav" aria-label="Navegación principal">
-        <a href="/" class="nav-link nav-link-active">Home</a>
-        <a href="/servicios/" class="nav-link">Servicios</a>
-        <a href="/nosotros/" class="nav-link">Nosotros</a>
-        <a href="/contacto/" class="nav-link">Contacto</a>
-      </nav>
-    </div>
-  </header>
+<body class="antialiased min-h-screen flex flex-col">
 
-  <main>
-    <!-- HERO -->
-    <section class="hero">
-      <div class="container hero-grid">
-        <div class="hero-text">
-          <p class="hero-kicker">Agencia Digital</p>
-          <h1 class="hero-title">
-            Impulsa tu negocio<br />
-            en el <span class="hero-highlight">mundo digital</span>
-          </h1>
-          <p class="hero-subtitle">
-            Desarrollamos estrategias digitales a medida, diseñamos webs impactantes
-            y optimizamos tu presencia online para atraer más clientes.
-          </p>
-          <div class="hero-actions">
-            <a href="/servicios/" class="btn btn-primary">Ver Servicios</a>
-            <a href="/contacto/" class="btn btn-secondary">Contáctanos</a>
-          </div>
-        </div>
-        <div class="hero-image-wrapper">
-          <img src="/assets/img/hero-agencia.jpg"
-               alt="Vista de costa y mar representando el mundo digital en movimiento"
-               class="hero-image" />
-        </div>
-      </div>
-    </section>
+    <!-- HEADER: Contiene el logo y la navegación principal --><header class="bg-white sticky top-0 z-10 py-4 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-12">
+                <!-- Logo o Nombre de la Consultora --><a href="#" class="flex-shrink-0 text-2xl font-extrabold text-blue-700 tracking-tight rounded-md p-1">
+                    <img src="https://placehold.co/120x30/ffffff/2563eb?text=LocalBoost" alt="LocalBoost Logo" class="h-7 w-auto">
+                </a>
 
-    <!-- POR QUÉ ELEGIRNOS -->
-    <section class="section">
-      <div class="container">
-        <p class="section-kicker">Por qué elegirnos</p>
-        <h2 class="section-title">Soluciones digitales que funcionan</h2>
-        <p class="section-subtitle">
-          Nos enfocamos en resultados reales. Desde el primer boceto hasta el lanzamiento final,
-          te acompañamos con una estrategia clara y medible.
-        </p>
+                <!-- Navegación Desktop --><nav class="hidden md:flex space-x-6" aria-label="Navegación Principal">
+                    <a href="#servicios" class="text-gray-600 hover:text-blue-700 transition duration-150 ease-in-out font-medium text-sm">Servicios</a>
+                    <a href="#auditoria-ia" class="text-gray-600 hover:text-blue-700 transition duration-150 ease-in-out font-medium text-sm">Auditoría IA</a>
+                    <a href="#casos" class="text-gray-600 hover:text-blue-700 transition duration-150 ease-in-out font-medium text-sm">Testimonios</a>
+                    <a href="#contacto" class="text-gray-600 hover:text-blue-700 transition duration-150 ease-in-out font-medium text-sm">Contacto</a>
+                </nav>
 
-        <div class="cards-grid">
-          <article class="card">
-            <h3 class="card-title">✅ Experiencia</h3>
-            <p class="card-text">
-              Más de 10 años ayudando a empresas a crecer en internet con estrategias sólidas y medibles.
-            </p>
-          </article>
-
-          <article class="card">
-            <h3 class="card-title">✅ Tecnología</h3>
-            <p class="card-text">
-              Utilizamos herramientas modernas para que tu web sea rápida, segura y fácil de mantener.
-            </p>
-          </article>
-
-          <article class="card">
-            <h3 class="card-title">✅ Soporte</h3>
-            <p class="card-text">
-              Acompañamiento continuo para que tu proyecto evolucione contigo y tu negocio.
-            </p>
-          </article>
+                <!-- Botón Menú Hamburguesa (Mobile) --><button id="menu-button" class="md:hidden p-2 text-gray-500 hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 rounded-lg" aria-expanded="false" aria-controls="mobile-menu" aria-label="Menú Principal">
+                    <!-- Icono SVG de hamburguesa y cruz --><svg id="menu-icon-open" class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                    </svg>
+                    <svg id="menu-icon-close" class="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
         </div>
 
-        <div class="section-cta-center">
-          <a href="/nosotros/" class="link-arrow">Conoce más sobre nosotros →</a>
+        <!-- Menú Mobile (se oculta/muestra con JS) --><nav id="mobile-menu" class="md:hidden hidden bg-white shadow-lg pb-2" aria-label="Navegación Móvil">
+            <a href="#servicios" class="block px-4 py-2 text-base font-medium text-gray-700 hover:bg-gray-50">Servicios</a>
+            <a href="#auditoria-ia" class="block px-4 py-2 text-base font-medium text-gray-700 hover:bg-gray-50">Auditoría IA</a>
+            <a href="#casos" class="block px-4 py-2 text-base font-medium text-gray-700 hover:bg-gray-50">Testimonios</a>
+            <a href="#contacto" class="block px-4 py-2 text-base font-medium text-gray-700 hover:bg-gray-50">Contacto</a>
+        </nav>
+    </header>
+
+    <!-- MAIN: Contiene todo el contenido principal de la landing page --><main class="flex-grow">
+
+        <!-- SECTION 1: HERO (El gancho principal) --><section id="hero" class="pt-20 pb-32 sm:pt-28 sm:pb-40 text-center hero-background-gradient">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <!-- Etiqueta "Especialistas en SEO Local para PYMES" --><span class="badge-seo-pymes mb-6">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" />
+                    </svg>
+                    Especialistas en SEO Local para PYMES
+                </span>
+
+                <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-gray-900 leading-tight mb-4 mt-6">
+                    Domina tu mercado y atrae <br>
+                    <span class="text-violet-700">más clientes locales</span>
+                </h1>
+                <p class="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">
+                    Ayudamos a negocios locales a aparecer primero en Google Maps y búsquedas locales. Aumenta tus llamadas, visitas y ventas con nuestra estrategia probada.
+                </p>
+                <!-- Botones de Llamada a la Acción --><div class="mt-10 flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+                    <a href="#contacto" class="btn-auditoria-ia">
+                        Auditoría Gratis con IA
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M10.293 15.707a1 1 0 010-1.414L14.586 10l-4.293-4.293a1 1 0 111.414-1.414l5 5a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0z" clip-rule="evenodd" />
+                            <path fill-rule="evenodd" d="M4.293 15.707a1 1 0 010-1.414L8.586 10 4.293 5.707a1 1 0 011.414-1.414l5 5a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0z" clip-rule="evenodd" />
+                        </svg>
+                    </a>
+                    <a href="#contacto" class="btn-agendar-consulta">
+                        Agendar Consultoría
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M10.293 15.707a1 1 0 010-1.414L14.586 10l-4.293-4.293a1 1 0 111.414-1.414l5 5a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0z" clip-rule="evenodd" />
+                            <path fill-rule="evenodd" d="M4.293 15.707a1 1 0 010-1.414L8.586 10 4.293 5.707a1 1 0 011.414-1.414l5 5a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0z" clip-rule="evenodd" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 2: SERVICIOS (Detalle de la oferta, actualizado) --><section id="servicios" class="py-20 sm:py-28 bg-white text-center">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <p class="text-sm font-semibold text-blue-600 mb-2 tracking-wide uppercase">NUESTROS SERVICIOS</p>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-gray-900 mb-4">
+                    Todo lo que necesitas para crecer localmente
+                </h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto mb-16">
+                    Estrategias integrales diseñadas para posicionar tu negocio frente a los clientes que ya te están buscando.
+                </p>
+                
+                <!-- Cuadrícula de 6 servicios (3x2 en desktop, 1xN en móvil) --><div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                    
+                    <!-- Servicio 1: Google Business Profile (Mapas) -->
+                    <article class="service-card">
+                        <div class="service-icon-box">
+                            <!-- Icono de Mapa -->
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.727A8 8 0 0120 18a8 8 0 01-16 0c0-.828.2-1.61.56-2.313L12 12m0 0l4.56 4.56m-4.56-4.56L7.44 16.73" />
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">Google Business Profile</h3>
+                        <p class="text-gray-600 text-base">Optimizamos tu perfil de Google para que destaques en el 'Local Pack' y Maps, aumentando visibilidad inmediata.</p>
+                    </article>
+
+                    <!-- Servicio 2: SEO On-Page Local (El que tiene el hover en la imagen) -->
+                    <article class="service-card">
+                        <div class="service-icon-box">
+                            <!-- Icono de Mundo/Web -->
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h14a2 2 0 012 2v2a2 2 0 01-2 2H5a2 2 0 01-2-2V5zM3 12a2 2 0 012-2h14a2 2 0 012 2v2a2 2 0 01-2 2H5a2 2 0 01-2-2v-2zM3 19a2 2 0 012-2h14a2 2 0 012 2v2a2 2 0 01-2 2H5a2 2 0 01-2-2v-2z" />
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">SEO On-Page Local</h3>
+                        <p class="text-gray-600 text-base">Ajustamos tu sitio web con palabras clave geo-localizadas para que Google entienda exactamente dónde operas.</p>
+                    </article>
+
+                    <!-- Servicio 3: Gestión de Reseñas -->
+                    <article class="service-card">
+                        <div class="service-icon-box">
+                            <!-- Icono de Estrella -->
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">Gestión de Reseñas</h3>
+                        <p class="text-gray-600 text-base">Estrategias automatizadas para conseguir más reseñas de 5 estrellas y gestionar tu reputación online.</p>
+                    </article>
+
+                    <!-- Servicio 4: Construcción de Citas -->
+                    <article class="service-card">
+                        <div class="service-icon-box">
+                            <!-- Icono de Búsqueda/Lupa -->
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">Construcción de Citas</h3>
+                        <p class="text-gray-600 text-base">Inscribimos tu negocio en los directorios locales más relevantes para aumentar la autoridad de dominio.</p>
+                    </article>
+                    
+                    <!-- Servicio 5: Web Móvil Optimizada -->
+                    <article class="service-card">
+                        <div class="service-icon-box">
+                            <!-- Icono de Móvil/Tablet -->
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">Web Móvil Optimizada</h3>
+                        <p class="text-gray-600 text-base">Aseguramos que tu web vuele en dispositivos móviles, donde ocurren el 80% de las búsquedas locales.</p>
+                    </article>
+
+                    <!-- Servicio 6: Analítica y Reportes -->
+                    <article class="service-card">
+                        <div class="service-icon-box">
+                            <!-- Icono de Gráfico de Barras -->
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0v-6a2 2 0 00-2-2h-2a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0v-6a2 2 0 00-2-2h-2a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0v-6a2 2 0 00-2-2h-2a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm9-6v-3a2 2 0 00-2-2h-2a2 2 0 00-2 2v3a2 2 0 002 2h2a2 2 0 002-2zm0 0v-3a2 2 0 00-2-2h-2a2 2 0 00-2 2v3a2 2 0 002 2h2a2 2 0 002-2zm0 0v-3a2 2 0 00-2-2h-2a2 2 0 00-2 2v3a2 2 0 002 2h2a2 2 0 002-2zm0 0v-3a2 2 0 00-2-2h-2a2 2 0 00-2 2v3a2 2 0 002 2h2a2 2 0 002-2z" />
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">Analítica y Reportes</h3>
+                        <p class="text-gray-600 text-base">Reportes mensuales transparentes sobre llamadas, solicitudes de dirección y visitas al sitio web.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 5: CTA Intermedia (Opcional, similar a la imagen) --><section id="auditoria-ia" class="py-20 bg-blue-700 text-center">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white mb-4">
+                    ¿Listo para Ver tu Negocio Crecer?
+                </h2>
+                <p class="text-xl text-blue-200 max-w-2xl mx-auto mb-8">
+                    Obtén un análisis instantáneo y personalizado de tu perfil de Google My Business con nuestra Auditoría IA gratuita.
+                </p>
+                <a href="#contacto" class="btn-auditoria-ia bg-green-500 hover:bg-green-600 text-white shadow-green-500/30">
+                    Realizar Auditoría Gratuita
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd" d="M10.293 15.707a1 1 0 010-1.414L14.586 10l-4.293-4.293a1 1 0 111.414-1.414l5 5a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0z" clip-rule="evenodd" />
+                        <path fill-rule="evenodd" d="M4.293 15.707a1 1 0 010-1.414L8.586 10 4.293 5.707a1 1 0 011.414-1.414l5 5a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0z" clip-rule="evenodd" />
+                    </svg>
+                </a>
+            </div>
+        </section>
+
+        <!-- SECTION 4: CONTACTO (Formulario y CTA final) --><section id="contacto" class="py-20 sm:py-28 bg-white">
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-center text-gray-900 mb-4">
+                    Contáctanos y Comienza a Crecer
+                </h2>
+                <p class="text-xl text-center text-gray-600 mb-12">
+                    Agenda una consultoría gratuita o solicita tu auditoría de Google My Business.
+                </p>
+                
+                <!-- Formulario de Contacto --><form id="contact-form" class="bg-gray-50 p-8 md:p-10 rounded-2xl shadow-xl space-y-6 border border-gray-100">
+                    <div>
+                        <label for="nombre" class="block text-sm font-medium text-gray-700 mb-1">Nombre y Apellido</label>
+                        <input type="text" id="nombre" name="nombre" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 transition duration-150 bg-white">
+                    </div>
+                    <div>
+                        <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email de Contacto</label>
+                        <input type="email" id="email" name="email" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 transition duration-150 bg-white">
+                    </div>
+                    <div>
+                        <label for="negocio" class="block text-sm font-medium text-gray-700 mb-1">Nombre de tu Negocio en Santiago</label>
+                        <input type="text" id="negocio" name="negocio" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 transition duration-150 bg-white">
+                    </div>
+                    <div>
+                        <label for="mensaje" class="block text-sm font-medium text-gray-700 mb-1">¿Cómo podemos ayudarte con Google Maps?</label>
+                        <textarea id="mensaje" name="mensaje" rows="4" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 transition duration-150 bg-white"></textarea>
+                    </div>
+                    
+                    <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white text-lg font-bold py-3 rounded-full shadow-lg transform hover:scale-[1.01] transition duration-300 ease-in-out">
+                        Enviar Consulta
+                    </button>
+                    
+                    <!-- Contenedor para mensajes de validación/éxito --><div id="form-message" class="mt-4 p-3 hidden rounded-lg text-center font-semibold text-sm"></div>
+                </form>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER: Información de contacto, enlaces legales y redes sociales --><footer class="bg-gray-900 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-white">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
+                <!-- Columna 1: Logo y Misión --><div>
+                    <h3 class="text-xl font-bold mb-3 text-blue-400">LocalBoost</h3>
+                    <p class="text-sm text-gray-400">Líderes en posicionamiento orgánico en Google Maps para negocios de la Región Metropolitana.</p>
+                </div>
+                
+                <!-- Columna 2: Contacto Rápido --><div>
+                    <h3 class="text-lg font-semibold mb-3">Contacto</h3>
+                    <p class="text-sm text-gray-400 mb-1">Email: contacto@localboost.cl</p>
+                    <p class="text-sm text-gray-400">Teléfono: +56 2 2876 5432</p>
+                    <p class="text-sm text-gray-400 mt-2">Ubicación: Santiago, Chile.</p>
+                </div>
+                
+                <!-- Columna 3: Redes Sociales --><div>
+                    <h3 class="text-lg font-semibold mb-3">Síguenos</h3>
+                    <div class="flex justify-center md:justify-start space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-blue-500 transition duration-150" aria-label="LinkedIn">
+                            <!-- Icono LinkedIn (ejemplo SVG) --><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4.98 3.5c0 1.381-1.11 2.5-2.485 2.5C1.115 6 .005 4.881.005 3.5.005 2.119 1.115 1 2.495 1c1.375 0 2.485 1.119 2.485 2.5zM.355 24h4.31v-14h-4.31v14zM16.96 9.5c-1.372 0-2.477.712-3.09 1.488V9.5h-4.225v14h4.225v-7.5c0-.497.014-1.006.18-1.373.456-.99.585-2.417.585-3.567 0-1.85-1.187-2.73-2.618-2.73-1.42 0-2.288 1.05-2.673 1.83v7.33h-4.226c.058-2.622 0-14 0-14h4.226v1.94c.58-1.048 1.82-2.19 4.14-2.19 3.23 0 5.617 2.18 5.617 6.845v7.405h4.224v-7.56c0-4.088-2.203-6.62-5.498-6.62z"/></svg>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-blue-500 transition duration-150" aria-label="Instagram">
+                            <!-- Icono Instagram (ejemplo SVG) --><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm3.17 11.23c-.15 1.34-1.08 2.37-2.3 2.55-1.4.19-4.28-.18-4.52-4.52-.25-2.43 1.35-4.5 3.52-4.5 1.96 0 3.32 1.43 3.33 3.37v.09h1.16v-.09c-.01-2.98-2.39-5.1-4.49-5.1-2.96 0-5.13 2.19-5.13 5.13s2.17 5.13 5.13 5.13c1.3 0 2.45-.48 3.32-1.37v.08c.86.89 2.01 1.37 3.32 1.37 2.96 0 5.13-2.19 5.13-5.13s-2.17-5.13-5.13-5.13c-1.3 0-2.45.48-3.32 1.37v-.08zM12 9c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-8 pt-6 text-center">
+                <p class="text-sm text-gray-500">&copy; 2025 LocalBoost - Todos los derechos reservados.</p>
+                <a href="#" class="text-xs text-gray-500 hover:text-blue-500 block mt-1">Política de Privacidad</a>
+            </div>
         </div>
-      </div>
-    </section>
-  </main>
+    </footer>
 
-  <footer class="site-footer">
-    <div class="container footer-grid">
-      <div>
-        <div class="brand footer-brand">
-          <span class="brand-icon">🌐</span>
-          <span class="brand-name">Agencia Digital</span>
-        </div>
-        <p class="footer-text">
-          Impulsamos tu negocio con estrategias digitales efectivas y desarrollo web de vanguardia.
-        </p>
-      </div>
+    <!-- Bloque JavaScript Vanilla (Menú Móvil y Validación de Formulario) --><script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const menuButton = document.getElementById('menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const menuIconOpen = document.getElementById('menu-icon-open');
+            const menuIconClose = document.getElementById('menu-icon-close');
+            const contactForm = document.getElementById('contact-form');
+            const formMessage = document.getElementById('form-message');
 
-      <div>
-        <h3 class="footer-title">Enlaces rápidos</h3>
-        <ul class="footer-list">
-          <li><a href="/">Home</a></li>
-          <li><a href="/servicios/">Servicios</a></li>
-          <li><a href="/nosotros/">Nosotros</a></li>
-          <li><a href="/contacto/">Contacto</a></li>
-        </ul>
-      </div>
-
-      <div>
-        <h3 class="footer-title">Contacto</h3>
-        <p class="footer-text">
-          contacto@agenciadigital.com<br />
-          +34 912 345 678<br />
-          Madrid, España
-        </p>
-      </div>
-    </div>
-
-    <div class="footer-bottom">
-      <div class="container footer-bottom-inner">
-        <p>© 2025 Agencia Digital. Todos los derechos reservados.</p>
-      </div>
-    </div>
-  </footer>
+            // 1. Lógica del Menú Móvil
+            menuButton.addEventListener('click', () => {
+                const isExpanded = menuButton.getAttribute('aria-expanded') === 'true';
+                
+                // Toggle del menú
+                mobileMenu.classList.toggle('hidden');
+                
+                // Toggle de los iconos de hamburguesa/cruz
+                menuIconOpen.classList.toggle('hidden');
+                menuIconClose.classList.toggle('hidden');
+                
+                // Actualiza el estado de accesibilidad
+                menuButton.setAttribute('aria-expanded', !isExpanded);
+            });
+            
+            // 2. Lógica de Validación de Formulario
+            contactForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                
+                // Validación básica de campos
+                const nombre = document.getElementById('nombre').value.trim();
+                const email = document.getElementById('email').value.trim();
+                const negocio = document.getElementById('negocio').value.trim();
+                const mensaje = document.getElementById('mensaje').value.trim();
+                
+                // Función simple de validación de email
+                const isValidEmail = (mail) => {
+                    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(mail);
+                };
+                
+                formMessage.classList.remove('hidden', 'bg-red-100', 'text-red-800', 'bg-green-100', 'text-green-800');
+                
+                if (nombre === '' || negocio === '' || mensaje === '') {
+                    formMessage.textContent = 'Por favor, completa todos los campos requeridos.';
+                    formMessage.classList.add('bg-red-100', 'text-red-800');
+                } else if (!isValidEmail(email)) {
+                    formMessage.textContent = 'Por favor, introduce un email válido.';
+                    formMessage.classList.add('bg-red-100', 'text-red-800');
+                } else {
+                    // Simulación de envío exitoso
+                    formMessage.textContent = '¡Gracias! Tu solicitud ha sido enviada. Nos contactaremos contigo en menos de 24 horas.';
+                    formMessage.classList.add('bg-green-100', 'text-green-800');
+                    contactForm.reset(); // Limpia el formulario tras el éxito
+                }
+                
+                formMessage.classList.remove('hidden');
+                
+                // Desplazamiento suave al mensaje (mejora UX)
+                formMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            });
+        });
+    </script>
 </body>
 </html>
