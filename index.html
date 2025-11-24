@@ -12,96 +12,197 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     
     <style>
+        /* COLORES BASE Y TIPOGRAFÍA */
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #f8faff; /* Un fondo más blanco azulado como en la imagen */
+            background-color: #f8faff; /* Fondo muy claro, casi blanco */
             color: #1a202c;
         }
-        /* Gradiente para el fondo sutil en el hero, replicando el de la imagen */
         .hero-background-gradient {
             background: radial-gradient(at 50% 10%, #dbeafe 0%, transparent 70%);
         }
-        /* Estilo específico para el botón de auditoría con icono */
+        
+        /* ESTILOS DE BOTONES HERO (Mantenidos) */
         .btn-auditoria-ia {
-            background-color: #2563eb; /* Azul fuerte como en la imagen */
+            background-color: #2563eb; 
             color: white;
-            padding: 0.9rem 1.7rem; /* Ajustado para coincidir */
-            border-radius: 0.75rem; /* Menos redondeado, como en la imagen */
-            font-weight: 600; /* Semibold */
-            font-size: 1rem; /* Base font size */
+            padding: 0.9rem 1.7rem; 
+            border-radius: 0.75rem; 
+            font-weight: 600; 
+            font-size: 1rem; 
             display: inline-flex;
             align-items: center;
-            gap: 0.6rem; /* Espaciado entre texto e icono */
+            gap: 0.6rem; 
             transition: all 0.2s ease-in-out;
-            box-shadow: 0 4px 14px rgba(37, 99, 235, 0.3); /* Sombra azulada como en la imagen */
+            box-shadow: 0 4px 14px rgba(37, 99, 235, 0.3); 
         }
         .btn-auditoria-ia:hover {
-            background-color: #1e40af; /* Azul más oscuro al hover */
-            transform: translateY(-1px); /* Pequeño efecto de elevación */
+            background-color: #1e40af; 
+            transform: translateY(-1px); 
             box-shadow: 0 6px 16px rgba(37, 99, 235, 0.4);
         }
-        /* Estilo para el botón de agendar consulta */
         .btn-agendar-consulta {
-            background-color: #ffffff; /* Blanco puro */
-            color: #4a5568; /* Gris oscuro para el texto */
-            padding: 0.9rem 1.7rem; /* Ajustado para coincidir */
-            border-radius: 0.75rem; /* Menos redondeado, como en la imagen */
-            font-weight: 600; /* Semibold */
-            font-size: 1rem; /* Base font size */
+            background-color: #ffffff; 
+            color: #4a5568; 
+            padding: 0.9rem 1.7rem; 
+            border-radius: 0.75rem; 
+            font-weight: 600; 
+            font-size: 1rem; 
             display: inline-flex;
             align-items: center;
-            gap: 0.6rem; /* Espaciado entre texto e icono */
+            gap: 0.6rem; 
             transition: all 0.2s ease-in-out;
-            border: 1px solid #e2e8f0; /* Borde gris muy sutil */
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); /* Sombra sutil */
+            border: 1px solid #e2e8f0; 
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); 
         }
         .btn-agendar-consulta:hover {
-            background-color: #f7fafc; /* Fondo muy claro al hover */
-            border-color: #cbd5e0; /* Borde ligeramente más oscuro */
-            transform: translateY(-1px); /* Pequeño efecto de elevación */
+            background-color: #f7fafc; 
+            border-color: #cbd5e0; 
+            transform: translateY(-1px); 
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
-        /* Estilo para la etiqueta "Especialistas en SEO Local para PYMES" */
         .badge-seo-pymes {
-            background-color: #eff6ff; /* Fondo azul muy claro */
-            color: #2563eb; /* Texto azul */
+            background-color: #eff6ff; 
+            color: #2563eb; 
             padding: 0.35rem 0.85rem;
             border-radius: 9999px;
-            font-size: 0.875rem; /* text-sm */
-            font-weight: 500; /* medium */
+            font-size: 0.875rem; 
+            font-weight: 500; 
             display: inline-flex;
             align-items: center;
             gap: 0.4rem;
-            border: 1px solid #dbeafe; /* Borde azul muy claro */
+            border: 1px solid #dbeafe; 
         }
         .badge-seo-pymes svg {
             color: #2563eb;
         }
 
-        /* Estilo de la tarjeta de servicio y el HOVER que replica el fondo azul claro */
+        /* ESTILOS DE SERVICIOS (Mantenidos) */
         .service-card {
-            background-color: #ffffff; /* Fondo blanco inicial */
-            border-radius: 1.5rem; /* Esquinas muy redondeadas */
-            padding: 2.5rem; /* Padding generoso */
-            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06); /* Sombra sutil */
+            background-color: #ffffff; 
+            border-radius: 1.5rem; 
+            padding: 2.5rem; 
+            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06); 
             transition: all 0.3s ease;
         }
         .service-card:hover {
-            background-color: #f0f7ff; /* Fondo azul claro en hover, como en la imagen */
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* Sombra ligera en hover */
+            background-color: #f0f7ff; 
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); 
         }
-
-        /* Estilo del icono dentro de la caja */
         .service-icon-box {
-            background-color: #2563eb; /* Azul fuerte para el fondo del icono */
+            background-color: #2563eb; 
             color: white;
             width: 3rem;
             height: 3rem;
-            border-radius: 0.75rem; /* Mismo redondeo que en la imagen */
+            border-radius: 0.75rem; 
             display: flex;
             align-items: center;
             justify-content: center;
             margin-bottom: 1rem;
+        }
+        
+        /* ESTILOS TESTIMONIOS (Nuevos, basados en la imagen) */
+        .testimonial-section {
+            background-color: #f8faff; /* Fondo muy claro de la sección */
+        }
+        .testimonial-card {
+            background-color: white;
+            border-radius: 1.5rem; /* Esquinas redondeadas */
+            padding: 2rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); /* Sombra estándar */
+        }
+        .testimonial-card:hover {
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* Sombra ligeramente más fuerte en hover */
+        }
+        .testimonial-quote {
+            position: relative;
+            font-size: 1rem;
+            line-height: 1.6;
+            color: #4a5568;
+            padding-left: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        .testimonial-quote::before {
+            content: '“';
+            position: absolute;
+            left: 0;
+            top: 0;
+            font-size: 2.5rem;
+            line-height: 1;
+            color: #2563eb; /* Azul para la cita */
+            font-family: serif; /* Usar serif para la comilla */
+        }
+        .testimonial-avatar {
+            width: 3rem;
+            height: 3rem;
+            border-radius: 9999px; /* Círculo */
+            object-fit: cover;
+            margin-right: 1rem;
+        }
+
+        
+        /* ESTILOS ESPECÍFICOS DEL NUEVO FORMULARIO IA (Dark Mode) */
+        .ia-form-container {
+            background-color: #171c32; 
+            color: #e5e7eb; 
+        }
+        .ia-form-input {
+            background-color: #293148; 
+            color: #ffffff;
+            border: 1px solid #3b4563; 
+            border-radius: 0.5rem;
+            padding: 0.75rem 1rem;
+            transition: all 0.2s;
+        }
+        .ia-form-input:focus {
+            outline: none;
+            border-color: #4f46e5; 
+            box-shadow: 0 0 0 1px #4f46e5;
+        }
+        .ia-form-select {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='%239CA3AF'%3E%3Cpath fill-rule='evenodd' d='M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z' clip-rule='evenodd' /%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 0.75rem center;
+            background-size: 1.5em 1.5em;
+        }
+        .btn-generate-audit {
+            background: linear-gradient(90deg, #4f46e5, #8b5cf6); 
+            color: white;
+            padding: 1rem 1.5rem;
+            border-radius: 0.75rem;
+            font-weight: 700;
+            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 4px 10px rgba(79, 70, 229, 0.4);
+        }
+        .btn-generate-audit:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(79, 70, 229, 0.6);
+        }
+        
+        /* Caja de Resultados/Estado a la derecha */
+        .ia-result-box {
+            background-color: #171c32; 
+            border: 1px dashed #3b4563; 
+            border-radius: 1.5rem;
+            min-height: 400px; 
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 2rem;
+        }
+        .ia-result-icon {
+            color: #fcd34d; 
+            background-color: #3b4563; 
+            border-radius: 9999px;
+            padding: 1rem;
+            margin-bottom: 1.5rem;
+            width: 3.5rem;
+            height: 3.5rem;
         }
     </style>
 
@@ -149,8 +250,8 @@
 
                 <!-- Navegación Desktop --><nav class="hidden md:flex space-x-6" aria-label="Navegación Principal">
                     <a href="#servicios" class="text-gray-600 hover:text-blue-700 transition duration-150 ease-in-out font-medium text-sm">Servicios</a>
-                    <a href="#auditoria-ia" class="text-gray-600 hover:text-blue-700 transition duration-150 ease-in-out font-medium text-sm">Auditoría IA</a>
                     <a href="#casos" class="text-gray-600 hover:text-blue-700 transition duration-150 ease-in-out font-medium text-sm">Testimonios</a>
+                    <a href="#auditoria-ia-form" class="text-gray-600 hover:text-blue-700 transition duration-150 ease-in-out font-medium text-sm">Auditoría IA</a>
                     <a href="#contacto" class="text-gray-600 hover:text-blue-700 transition duration-150 ease-in-out font-medium text-sm">Contacto</a>
                 </nav>
 
@@ -167,8 +268,8 @@
 
         <!-- Menú Mobile (se oculta/muestra con JS) --><nav id="mobile-menu" class="md:hidden hidden bg-white shadow-lg pb-2" aria-label="Navegación Móvil">
             <a href="#servicios" class="block px-4 py-2 text-base font-medium text-gray-700 hover:bg-gray-50">Servicios</a>
-            <a href="#auditoria-ia" class="block px-4 py-2 text-base font-medium text-gray-700 hover:bg-gray-50">Auditoría IA</a>
             <a href="#casos" class="block px-4 py-2 text-base font-medium text-gray-700 hover:bg-gray-50">Testimonios</a>
+            <a href="#auditoria-ia-form" class="block px-4 py-2 text-base font-medium text-gray-700 hover:bg-gray-50">Auditoría IA</a>
             <a href="#contacto" class="block px-4 py-2 text-base font-medium text-gray-700 hover:bg-gray-50">Contacto</a>
         </nav>
     </header>
@@ -192,7 +293,7 @@
                     Ayudamos a negocios locales a aparecer primero en Google Maps y búsquedas locales. Aumenta tus llamadas, visitas y ventas con nuestra estrategia probada.
                 </p>
                 <!-- Botones de Llamada a la Acción --><div class="mt-10 flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
-                    <a href="#contacto" class="btn-auditoria-ia">
+                    <a href="#auditoria-ia-form" class="btn-auditoria-ia">
                         Auditoría Gratis con IA
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
                             <path fill-rule="evenodd" d="M10.293 15.707a1 1 0 010-1.414L14.586 10l-4.293-4.293a1 1 0 111.414-1.414l5 5a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0z" clip-rule="evenodd" />
@@ -296,17 +397,148 @@
                 </div>
             </div>
         </section>
-
-        <!-- SECTION 5: CTA Intermedia (Opcional, similar a la imagen) --><section id="auditoria-ia" class="py-20 bg-blue-700 text-center">
-            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-                <h2 class="text-3xl sm:text-4xl font-extrabold text-white mb-4">
-                    ¿Listo para Ver tu Negocio Crecer?
+        
+        <!-- SECTION 3: TESTIMONIOS (Nuevo formato, reubicado) --><section id="casos" class="py-20 sm:py-28 testimonial-section">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h2 class="text-4xl sm:text-5xl font-extrabold text-gray-900 mb-3">
+                    Lo que dicen nuestros clientes
                 </h2>
-                <p class="text-xl text-blue-200 max-w-2xl mx-auto mb-8">
-                    Obtén un análisis instantáneo y personalizado de tu perfil de Google My Business con nuestra Auditoría IA gratuita.
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto mb-16">
+                    Historias reales de negocios que han transformado su presencia local.
                 </p>
-                <a href="#contacto" class="btn-auditoria-ia bg-green-500 hover:bg-green-600 text-white shadow-green-500/30">
-                    Realizar Auditoría Gratuita
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    
+                    <!-- Testimonio 1: Carlos Méndez -->
+                    <article class="testimonial-card text-left">
+                        <div class="flex items-center mb-4">
+                            <img src="https://placehold.co/48x48/dbeafe/2563eb?text=CM" alt="Avatar Carlos Méndez" class="testimonial-avatar">
+                            <div>
+                                <p class="font-bold text-gray-900">Carlos Méndez</p>
+                                <p class="text-sm text-gray-500">Dueño en Restaurante La Plaza</p>
+                            </div>
+                        </div>
+                        <p class="testimonial-quote">
+                            "Desde que empezamos con LocalBoost, nuestras reservas han aumentado un 40%. La gestión de las reseñas de Google ha sido clave para nuestra reputación."
+                        </p>
+                    </article>
+
+                    <!-- Testimonio 2: Laura García -->
+                    <article class="testimonial-card text-left">
+                        <div class="flex items-center mb-4">
+                            <img src="https://placehold.co/48x48/dbeafe/2563eb?text=LG" alt="Avatar Laura García" class="testimonial-avatar">
+                            <div>
+                                <p class="font-bold text-gray-900">Laura García</p>
+                                <p class="text-sm text-gray-500">Gerente en Clínica Dental Sonrisas</p>
+                            </div>
+                        </div>
+                        <p class="testimonial-quote">
+                            "La auditoría inicial nos abrió los ojos. Implementaron cambios en la web y en dos meses ya estábamos en el top 3 de Google Maps para 'dentista centro'."
+                        </p>
+                    </article>
+                    
+                    <!-- Testimonio 3: Roberto Díaz -->
+                    <article class="testimonial-card text-left">
+                        <div class="flex items-center mb-4">
+                            <img src="https://placehold.co/48x48/dbeafe/2563eb?text=RD" alt="Avatar Roberto Díaz" class="testimonial-avatar">
+                            <div>
+                                <p class="font-bold text-gray-900">Roberto Díaz</p>
+                                <p class="text-sm text-gray-500">Director en Reformas Integrales Díaz</p>
+                            </div>
+                        </div>
+                        <p class="testimonial-quote">
+                            "Un servicio profesional y transparente. Los reportes mensuales me permiten ver exactamente dónde va mi inversión y el retorno que obtengo."
+                        </p>
+                    </article>
+                </div>
+            </div>
+        </section>
+        
+        <!-- SECTION 4: AUDITORÍA INSTANTÁNEA IMPULSADA POR IA (Anteriormente Section 3) --><section id="auditoria-ia-form" class="py-20 sm:py-28 ia-form-container">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
+                    
+                    <!-- Columna Izquierda: Título y Formulario -->
+                    <div>
+                        <h2 class="text-4xl sm:text-5xl font-extrabold text-white mb-4">
+                            Auditoría Instantánea <span class="text-blue-400">impulsada por IA</span>
+                        </h2>
+                        <p class="text-lg text-gray-400 max-w-md mb-10">
+                            Descubre qué está frenando tu crecimiento local. Nuestra inteligencia artificial analiza tu perfil y te da un plan de acción en segundos.
+                        </p>
+                        
+                        <!-- Formulario de Auditoría -->
+                        <form id="ia-audit-form" class="space-y-6">
+                            
+                            <!-- Nombre del Negocio -->
+                            <div>
+                                <label for="business-name" class="block text-sm font-medium text-gray-300 mb-1">Nombre del Negocio</label>
+                                <input type="text" id="business-name" name="business-name" required placeholder="Ej. Pizzería Roma" class="ia-form-input w-full">
+                            </div>
+
+                            <!-- Ciudad/Zona y Sector (En la misma fila) -->
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label for="city" class="block text-sm font-medium text-gray-300 mb-1">Ciudad/Zona</label>
+                                    <input type="text" id="city" name="city" required placeholder="Ej. Madrid Centro" value="Santiago Centro" class="ia-form-input w-full">
+                                </div>
+                                <div>
+                                    <label for="sector" class="block text-sm font-medium text-gray-300 mb-1">Sector</label>
+                                    <select id="sector" name="sector" required class="ia-form-input ia-form-select w-full">
+                                        <option value="">Selecciona...</option>
+                                        <option value="restaurant">Restaurante</option>
+                                        <option value="dentist">Clínica Dental</option>
+                                        <option value="mechanic">Taller Mecánico</option>
+                                        <option value="other">Otro/Servicios</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <!-- Sitio Web (Opcional) -->
+                            <div>
+                                <label for="website" class="block text-sm font-medium text-gray-300 mb-1">Sitio Web (Opcional)</label>
+                                <input type="url" id="website" name="website" placeholder="https://tunegocio.com" class="ia-form-input w-full">
+                            </div>
+                            
+                            <!-- Botón Generar Auditoría -->
+                            <button type="submit" class="btn-generate-audit w-full flex items-center justify-center space-x-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                    <path d="M5.5 10a.5.5 0 01.5-.5h8.5a.5.5 0 010 1H6a.5.5 0 01-.5-.5zM5.5 7a.5.5 0 01.5-.5h8.5a.5.5 0 010 1H6a.5.5 0 01-.5-.5zM5.5 13a.5.5 0 01.5-.5h8.5a.5.5 0 010 1H6a.5.5 0 01-.5-.5zM10 2a.5.5 0 01.5-.5h.01a.5.5 0 010 1H10.5a.5.5 0 01-.5-.5zM10 18a.5.5 0 01.5-.5h.01a.5.5 0 010 1H10.5a.5.5 0 01-.5-.5zM15 8.5a.5.5 0 01.5-.5h.01a.5.5 0 010 1H15.5a.5.5 0 01-.5-.5zM15 11.5a.5.5 0 01.5-.5h.01a.5.5 0 010 1H15.5a.5.5 0 01-.5-.5zM5 8.5a.5.5 0 01.5-.5h.01a.5.5 0 010 1H5.5a.5.5 0 01-.5-.5zM5 11.5a.5.5 0 01.5-.5h.01a.5.5 0 010 1H5.5a.5.5 0 01-.5-.5z"/>
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm-1-7h2V8h-2v3z" clip-rule="evenodd" />
+                                </svg>
+                                <span>Generar Auditoría Gratis</span>
+                            </button>
+                        </form>
+                    </div>
+                    
+                    <!-- Columna Derecha: Caja de Estado/Resultado (Dashed border) -->
+                    <div id="ia-result-box" class="ia-result-box">
+                        <div class="ia-result-icon">
+                            <!-- Icono de Bombilla/Idea -->
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-full w-full" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M10 21.5c0 .28-.22.5-.5.5h-2c-.28 0-.5-.22-.5-.5v-1h3v1zm1-18c-3.1 0-5.5 2.5-5.5 5.5v2h-1c-.55 0-1 .45-1 1v7c0 .55.45 1 1 1h14c.55 0 1-.45 1-1v-7c0-.55-.45-1-1-1h-1v-2c0-3.04-2.46-5.5-5.5-5.5zm-3 7v2h6v-2c0-2.21-1.79-4-4-4s-4 1.79-4 4z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold text-white mb-2">Esperando datos</h3>
+                        <p class="text-gray-400 text-sm max-w-xs">
+                            Rellena el formulario para recibir un análisis estratégico personalizado generado por nuestros modelos de IA.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 5: CONTACTO (CTA final simplificado) --><section id="contacto" class="py-20 bg-white">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-gray-900 mb-4">
+                    ¿Prefieres una Consulta Directa?
+                </h2>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto mb-8">
+                    Hablemos de tus objetivos. Agenda una reunión gratuita con uno de nuestros expertos en SEO Local.
+                </p>
+                <a href="mailto:contacto@localboost.cl" class="btn-auditoria-ia bg-blue-600 hover:bg-blue-700 text-white shadow-blue-500/30">
+                    Agendar Llamada Ahora
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
                         <path fill-rule="evenodd" d="M10.293 15.707a1 1 0 010-1.414L14.586 10l-4.293-4.293a1 1 0 111.414-1.414l5 5a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0z" clip-rule="evenodd" />
                         <path fill-rule="evenodd" d="M4.293 15.707a1 1 0 010-1.414L8.586 10 4.293 5.707a1 1 0 011.414-1.414l5 5a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0z" clip-rule="evenodd" />
@@ -314,43 +546,7 @@
                 </a>
             </div>
         </section>
-
-        <!-- SECTION 4: CONTACTO (Formulario y CTA final) --><section id="contacto" class="py-20 sm:py-28 bg-white">
-            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-                <h2 class="text-3xl sm:text-4xl font-extrabold text-center text-gray-900 mb-4">
-                    Contáctanos y Comienza a Crecer
-                </h2>
-                <p class="text-xl text-center text-gray-600 mb-12">
-                    Agenda una consultoría gratuita o solicita tu auditoría de Google My Business.
-                </p>
-                
-                <!-- Formulario de Contacto --><form id="contact-form" class="bg-gray-50 p-8 md:p-10 rounded-2xl shadow-xl space-y-6 border border-gray-100">
-                    <div>
-                        <label for="nombre" class="block text-sm font-medium text-gray-700 mb-1">Nombre y Apellido</label>
-                        <input type="text" id="nombre" name="nombre" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 transition duration-150 bg-white">
-                    </div>
-                    <div>
-                        <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email de Contacto</label>
-                        <input type="email" id="email" name="email" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 transition duration-150 bg-white">
-                    </div>
-                    <div>
-                        <label for="negocio" class="block text-sm font-medium text-gray-700 mb-1">Nombre de tu Negocio en Santiago</label>
-                        <input type="text" id="negocio" name="negocio" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 transition duration-150 bg-white">
-                    </div>
-                    <div>
-                        <label for="mensaje" class="block text-sm font-medium text-gray-700 mb-1">¿Cómo podemos ayudarte con Google Maps?</label>
-                        <textarea id="mensaje" name="mensaje" rows="4" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 transition duration-150 bg-white"></textarea>
-                    </div>
-                    
-                    <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white text-lg font-bold py-3 rounded-full shadow-lg transform hover:scale-[1.01] transition duration-300 ease-in-out">
-                        Enviar Consulta
-                    </button>
-                    
-                    <!-- Contenedor para mensajes de validación/éxito --><div id="form-message" class="mt-4 p-3 hidden rounded-lg text-center font-semibold text-sm"></div>
-                </form>
-            </div>
-        </section>
-
+        
     </main>
 
     <!-- FOOTER: Información de contacto, enlaces legales y redes sociales --><footer class="bg-gray-900 py-12">
@@ -394,9 +590,10 @@
             const mobileMenu = document.getElementById('mobile-menu');
             const menuIconOpen = document.getElementById('menu-icon-open');
             const menuIconClose = document.getElementById('menu-icon-close');
-            const contactForm = document.getElementById('contact-form');
-            const formMessage = document.getElementById('form-message');
-
+            
+            const auditForm = document.getElementById('ia-audit-form');
+            const resultBox = document.getElementById('ia-result-box');
+            
             // 1. Lógica del Menú Móvil
             menuButton.addEventListener('click', () => {
                 const isExpanded = menuButton.getAttribute('aria-expanded') === 'true';
@@ -412,41 +609,70 @@
                 menuButton.setAttribute('aria-expanded', !isExpanded);
             });
             
-            // 2. Lógica de Validación de Formulario
-            contactForm.addEventListener('submit', (e) => {
+            // 2. Lógica de Validación y Procesamiento de Auditoría IA (Simulación)
+            auditForm.addEventListener('submit', (e) => {
                 e.preventDefault();
                 
-                // Validación básica de campos
-                const nombre = document.getElementById('nombre').value.trim();
-                const email = document.getElementById('email').value.trim();
-                const negocio = document.getElementById('negocio').value.trim();
-                const mensaje = document.getElementById('mensaje').value.trim();
+                const businessName = document.getElementById('business-name').value.trim();
+                const city = document.getElementById('city').value.trim();
+                const sector = document.getElementById('sector').value;
+                const website = document.getElementById('website').value.trim();
                 
-                // Función simple de validación de email
-                const isValidEmail = (mail) => {
-                    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(mail);
-                };
-                
-                formMessage.classList.remove('hidden', 'bg-red-100', 'text-red-800', 'bg-green-100', 'text-green-800');
-                
-                if (nombre === '' || negocio === '' || mensaje === '') {
-                    formMessage.textContent = 'Por favor, completa todos los campos requeridos.';
-                    formMessage.classList.add('bg-red-100', 'text-red-800');
-                } else if (!isValidEmail(email)) {
-                    formMessage.textContent = 'Por favor, introduce un email válido.';
-                    formMessage.classList.add('bg-red-100', 'text-red-800');
-                } else {
-                    // Simulación de envío exitoso
-                    formMessage.textContent = '¡Gracias! Tu solicitud ha sido enviada. Nos contactaremos contigo en menos de 24 horas.';
-                    formMessage.classList.add('bg-green-100', 'text-green-800');
-                    contactForm.reset(); // Limpia el formulario tras el éxito
+                if (businessName === '' || city === '' || sector === '') {
+                    resultBox.innerHTML = `
+                        <div class="ia-result-icon bg-red-800/50">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-full w-full" fill="currentColor" viewBox="0 0 24 24">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm-1-7h2V8h-2v3z" clip-rule="evenodd" />
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold text-white mb-2">Error de Validación</h3>
+                        <p class="text-gray-400 text-sm max-w-xs">
+                            Por favor, asegúrate de rellenar todos los campos obligatorios antes de generar la auditoría.
+                        </p>
+                    `;
+                    resultBox.style.borderColor = '#b91c1c'; /* Red border */
+                    return;
                 }
                 
-                formMessage.classList.remove('hidden');
+                // Mostrar estado de "Cargando"
+                resultBox.style.borderColor = '#2563eb';
+                resultBox.innerHTML = `
+                    <div class="ia-result-icon bg-blue-800/50 animate-spin">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-full w-full" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M4 4v5h.582m15.356 2A8.001 8.001 0 0010.582 18m-7.01-14.01a8 8 0 0115.356 0" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-white mb-2">Analizando datos...</h3>
+                    <p class="text-gray-400 text-sm max-w-xs">
+                        Nuestra IA está escaneando Google Maps y tu perfil de negocio. Esto puede tardar unos segundos.
+                    </p>
+                `;
                 
-                // Desplazamiento suave al mensaje (mejora UX)
-                formMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                // Simulación de respuesta de la IA (3 segundos)
+                setTimeout(() => {
+                    resultBox.style.borderColor = '#059669'; /* Green border */
+                    resultBox.innerHTML = `
+                        <div class="ia-result-icon bg-green-800/50">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-full w-full" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold text-white mb-2">¡Auditoría Lista!</h3>
+                        <p class="text-gray-400 text-sm max-w-xs mb-4">
+                            ${businessName} en ${city} tiene un potencial enorme.
+                        </p>
+                        <a href="mailto:contacto@localboost.cl?subject=Auditoria%20IA%20lista%20para%20${businessName}" class="text-blue-400 font-semibold hover:text-blue-300 transition duration-150">
+                            Haz clic aquí para ver el informe completo por email.
+                        </a>
+                    `;
+                }, 3000); // 3 segundos de espera
+                
+                resultBox.scrollIntoView({ behavior: 'smooth', block: 'start' });
             });
+            
+            // Nota: Se ha eliminado el formulario anterior de la sección Contacto (id=contact-form)
+            // y se ha simplificado la sección Contacto a un simple CTA.
+            
         });
     </script>
 </body>
