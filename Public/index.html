@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>React SPA UMD</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- React 18 UMD -->
+  <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+
+  <!-- React Router 6 UMD -->
+  <script src="https://unpkg.com/react-router-dom@6/umd/react-router-dom.development.js"></script>
+</head>
+
+<body class="bg-gray-50">
+  <div id="root"></div>
+
+  <script>
+    const { createRoot } = ReactDOM;
+    const { BrowserRouter, Routes, Route, Link } = ReactRouterDOM;
+    const h = React.createElement;
+
+    const Nav = () =>
+      h("nav", { className: "p-4 bg-white shadow-md" },
+        h(Link, { to: "/", className: "mr-4" }, "Home"),
+        h(Link, { to: "/servicios" }, "Servicios")
+      );
+
+    const Home = () =>
+      h("div", null,
+        h(Nav),
+        h("h1", { className: "p-4 text-3xl" }, "Home")
+      );
+
+    const Servicios = () =>
+      h("div", null,
+        h(Nav),
+        h("h1", { className: "p-4 text-3xl" }, "Servicios")
+      );
+
+    const App = () =>
+      h(BrowserRouter, null,
+        h(Routes, null,
+          h(Route, { path: "/", element: h(Home) }),
+          h(Route, { path: "/servicios", element: h(Servicios) }),
+          h(Route, { path: "*", element: h("h1", null, "404") })
+        )
+      );
+
+    createRoot(document.getElementById("root")).render(h(App));
+  </script>
+</body>
+</html>
