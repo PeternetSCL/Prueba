@@ -8,79 +8,50 @@
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
 
- <!-- React 18 UMD (ESTABLE) -->
-<script src="https://unpkg.com/react@18.2.0/umd/react.development.js"></script>
-<script src="https://unpkg.com/react-dom@18.2.0/umd/react-dom.development.js"></script>
-<script src="https://unpkg.com/react-dom@18.2.0/umd/react-dom-client.development.js"></script>
+  <!-- React 18 UMD -->
+  <script src="https://unpkg.com/react@18.2.0/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@18.2.0/umd/react-dom.development.js"></script>
 
-<!-- React Router DOM 6 UMD (ESTABLE) -->
-<script src="https://cdn.jsdelivr.net/npm/react-router-dom@6.22.1/umd/react-router-dom.development.js"></script>
+  <!-- React Router DOM 6 UMD -->
+  <script src="https://cdn.jsdelivr.net/npm/react-router-dom@6.22.1/umd/react-router-dom.development.js"></script>
 </head>
 
 <body class="bg-gray-50">
   <div id="root"></div>
 
   <script>
-    // Extraemos APIs desde las variables globales UMD
-    const { useState, useEffect } = React;
-    const { createRoot } = ReactDOMClient;
+    const { createRoot } = ReactDOM;
     const { BrowserRouter, Routes, Route, Link } = ReactRouterDOM;
-
     const h = React.createElement;
 
-    // NAV
-    const Navigation = () =>
-      h(
-        "nav",
-        { className: "bg-white shadow-sm border-b border-gray-200 p-4" },
-        h(
-          "div",
-          { className: "flex space-x-6 text-lg" },
-          h(Link, { to: "/" }, "Home"),
-          h(Link, { to: "/servicios" }, "Servicios")
-        )
+    const Nav = () =>
+      h("nav", { className: "p-4 bg-white shadow-md" },
+        h(Link, { to: "/", className: "mr-4" }, "Home"),
+        h(Link, { to: "/servicios" }, "Servicios")
       );
 
-    // HOME
-    const HomePage = () =>
-      h(
-        "div",
-        { className: "p-10" },
-        h(Navigation),
-        h("h1", { className: "text-4xl font-bold mb-4" }, "Home"),
-        h("p", { className: "text-gray-600 text-xl" }, "Bienvenido a la Home.")
+    const Home = () =>
+      h("div", null,
+        h(Nav),
+        h("h1", { className: "p-4 text-3xl" }, "Home")
       );
 
-    // SERVICIOS
-    const ServicesPage = () =>
-      h(
-        "div",
-        { className: "p-10" },
-        h(Navigation),
-        h("h1", { className: "text-4xl font-bold mb-4" }, "Servicios"),
-        h("p", { className: "text-gray-600 text-xl" }, "Página de Servicios.")
+    const Servicios = () =>
+      h("div", null,
+        h(Nav),
+        h("h1", { className: "p-4 text-3xl" }, "Servicios")
       );
 
-    // APP
     const App = () =>
-      h(
-        BrowserRouter,
-        null,
-        h(
-          Routes,
-          null,
-          h(Route, { path: "/", element: h(HomePage) }),
-          h(Route, { path: "/servicios", element: h(ServicesPage) }),
-          h(Route, {
-            path: "*",
-            element: h("h1", { className: "p-10 text-red-600" }, "404 Not Found"),
-          })
+      h(BrowserRouter, null,
+        h(Routes, null,
+          h(Route, { path: "/", element: h(Home) }),
+          h(Route, { path: "/servicios", element: h(Servicios) }),
+          h(Route, { path: "*", element: h("h1", null, "404") })
         )
       );
 
-    // Inicialización
-    const root = createRoot(document.getElementById("root"));
-    root.render(h(App));
+    createRoot(document.getElementById("root")).render(h(App));
   </script>
 </body>
 </html>
